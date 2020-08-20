@@ -103,7 +103,8 @@ class Home extends StatelessWidget {
                                   color: Colors.pinkAccent))))
                 ],
               ),
-              Clovermike()
+              Clovermike(),
+              Button()
             ],
           )),
     );
@@ -119,7 +120,33 @@ class Clovermike extends StatelessWidget {
       child: image,
       width: 200.0,
       height: 200.0,
-      padding: EdgeInsets.all(20.0),
+      margin: EdgeInsets.all(20.0),
     );
+  }
+}
+
+class Button extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        width: 250,
+        height: 50,
+        //margin: EdgeInsets.all(20.0),
+        child: RaisedButton(
+          onPressed: () => okButton(context),
+          elevation: 10.0,
+          color: Colors.green,
+          child: Text("OK",
+              textDirection: TextDirection.ltr,
+              style: TextStyle(
+                  fontFamily: "Alata", fontSize: 20.0, color: Colors.red)),
+        ));
+  }
+
+  void okButton(BuildContext bc) {
+    var alertDialog = AlertDialog(
+        title: Text("OK has been pressed!"), content: Text("Enjoy this app!"));
+
+    showDialog(context: bc, builder: (BuildContext context) => alertDialog);
   }
 }
