@@ -115,6 +115,11 @@ class Clovermike extends StatelessWidget {
   Widget build(BuildContext context) {
     AssetImage assetImage = AssetImage("images/clovermike.png");
     Image image = Image(image: assetImage);
-    return Container(child: image);
+    return Container(
+      child: image,
+      width: 200.0,
+      height: 200.0,
+      padding: EdgeInsets.all(20.0),
+    );
   }
 }
